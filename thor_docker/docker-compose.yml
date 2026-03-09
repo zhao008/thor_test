@@ -1,0 +1,17 @@
+services:
+  cuda:
+    build: .
+    image: cutile-cuda-dev
+    runtime: nvidia
+    privileged: true
+    stdin_open: true
+    tty: true
+    working_dir: /workspace/host
+    volumes:
+      - .:/workspace/host
+    environment:
+      NVIDIA_DISABLE_REQUIRE: "1"
+      NVIDIA_VISIBLE_DEVICES: all
+      http_proxy: ${http_proxy}
+      https_proxy: ${https_proxy}
+      no_proxy: ${no_proxy}

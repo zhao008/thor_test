@@ -1,0 +1,32 @@
+# ============================================
+# Thor CuTile Test - Git Ignore Configuration
+# 白名单模式：只允许源码文件
+# ============================================
+
+# 忽略所有文件
+*
+
+# 允许目录
+!*/
+
+# ----------------
+# 允许的源码文件
+# ----------------
+# Python 源码
+!*.py
+
+# Shell 脚本
+!*.sh
+
+# 文档文件
+!*.md
+
+# Docker 配置
+!Dockerfile
+!docker-compose.yml
+!.dockerignore
+
+# Git 配置
+!.gitignore
+!.gitkeep
+
