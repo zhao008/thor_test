@@ -68,7 +68,7 @@ for k in $K_DIMS; do
         echo "[${GLOBAL_TEST_NUM}/${TOTAL_TESTS}] K=$k, M=$m, N=$n"
         
         # Run with NCU profiling, continue on error
-        ncu --set full -f -o "$OUTPUT_FILE" \
+        ncu -k regex:matmul_kernel --set full -f -o "$OUTPUT_FILE" \
             $PYTHON_CMD --M $m --N $n --K $k  || echo "  Warning: Test failed but continuing..."
             # $PYTHON_CMD --M $m --N $n --K $k  --l2-persist-input || echo "  Warning: Test failed but continuing..."
         
